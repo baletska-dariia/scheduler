@@ -1,2 +1,2 @@
 # scheduler
-angular application forn planning your studying process
+angular application for planning your studying process
