@@ -1,0 +1,51 @@
+<div class="example-container mat-elevation-z8">
+    <table mat-table [dataSource]="dataSource">
+
+
+        <!-- Number Column -->
+        <ng-container matColumnDef="number">
+            <th mat-header-cell *matHeaderCellDef><svg class="table-header-svg" height="469pt" viewBox="0 -21 469.33333 469" width="469pt" xmlns="http://www.w3.org/2000/svg"><path d="m448 106.839844h-64.8125l21.398438-79.808594c3.050781-11.371094-3.691407-23.082031-15.082032-26.132812-11.390625-3.050782-23.105468 3.710937-26.132812 15.082031l-24.339844 90.859375h-151.511719l21.398438-79.808594c3.050781-11.371094-3.691407-23.082031-15.082031-26.132812-11.394532-3.027344-23.082032 3.710937-26.113282 15.082031l-24.363281 90.859375h-79.359375c-11.777344 0-21.332031 9.535156-21.332031 21.332031 0 11.800781 9.554687 21.335937 21.332031 21.335937h67.902344l-34.324219 128h-76.246094c-11.773437 0-21.332031 9.535157-21.332031 21.332032s9.558594 21.332031 21.332031 21.332031h64.8125l-21.398437 79.808594c-3.050782 11.371093 3.691406 23.082031 15.082031 26.132812 1.835937.492188 3.691406.726563 5.503906.726563 9.410157 0 18.050781-6.273438 20.589844-15.808594l24.382813-90.859375h151.507812l-21.398438 79.808594c-3.046874 11.371093 3.691407 23.082031 15.085938 26.132812 1.832031.492188 3.6875.726563 5.523438.726563 9.410156 0 18.046874-6.273438 20.585937-15.808594l24.363281-90.859375h79.359375c11.777344 0 21.335938-9.535156 21.335938-21.332031s-9.558594-21.332032-21.335938-21.332032h-67.902343l34.324218-128h76.246094c11.777344 0 21.332031-9.535156 21.332031-21.335937 0-11.796875-9.554687-21.332031-21.332031-21.332031zm-154.753906 170.667968h-151.507813l34.324219-128h151.511719zm0 0"/></svg></th>
+            <td mat-cell *matCellDef="let element"> {{element.number}} </td>
+        </ng-container>
+
+        <!-- Subject Column -->
+        <ng-container matColumnDef="subject">
+            <th mat-header-cell *matHeaderCellDef> Subject </th>
+            <td mat-cell class="subject-row" *matCellDef="let element"> {{element.subject}} </td>
+        </ng-container>
+
+        <!-- Homework Column -->
+        <ng-container matColumnDef="homework">
+            <th mat-header-cell *matHeaderCellDef> Homework </th>
+            <td mat-cell class="homework-row" *matCellDef="let element"> {{element.homework}} </td>
+        </ng-container>
+
+        <!-- Deadline Column -->
+        <ng-container matColumnDef="deadline">
+            <th mat-header-cell *matHeaderCellDef> Deadline <svg class="table-header-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 60">
+	<path d="M30,0C13.458,0,0,13.458,0,30s13.458,30,30,30s30-13.458,30-30S46.542,0,30,0z M30,58C14.561,58,2,45.439,2,30
+		S14.561,2,30,2s28,12.561,28,28S45.439,58,30,58z"/>
+	<path d="M30,6c-0.552,0-1,0.447-1,1v23H14c-0.552,0-1,0.447-1,1s0.448,1,1,1h16c0.552,0,1-0.447,1-1V7C31,6.447,30.552,6,30,6z"/>
+            </svg></th>
+            <td mat-cell *matCellDef="let element"> {{element.deadline | date: 'HH:mm'}} </td>
+        </ng-container>
+        <!-- Checkbox Column -->
+        <ng-container matColumnDef="select">
+
+            <th mat-header-cell *matHeaderCellDef>
+                <input type="checkbox" style="height: 1rem; width: 1rem;">
+                <!-- <mat-checkbox (change)="$event ? masterToggle() : null" [checked]="selection.hasValue() && isAllSelected()" [indeterminate]="selection.hasValue() && !isAllSelected()" [aria-label]="checkboxLabel()">
+                </mat-checkbox> -->
+            </th>
+            <td mat-cell *matCellDef="let row">
+                <input type="checkbox" style="height: 1rem; width: 1rem;">
+                <!-- <mat-checkbox (click)="$event.stopPropagation()" (change)="$event ? selection.toggle(row) : null" [checked]="selection.isSelected(row)" [aria-label]="checkboxLabel(row)">
+                </mat-checkbox> -->
+            </td>
+        </ng-container>
+        <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></tr>
+
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;" (click)="selection.toggle(row)">
+        </tr>
+    </table>
+</div>
