@@ -11,9 +11,12 @@ import { DemoMaterialModule } from '../material.module';
 import { DashboardComponent } from './dashboard.component';
 import { ScheduleTableComponent } from './schedule-table/schedule-table.component';
 import { HomeworkTableComponent } from './homework-table/homework-table.component';
+import { SharedModule } from '../shared/shared.module';
+import { ButtonComponent } from '../shared/button/button.component';
 
 @NgModule({
   declarations: [
+    ButtonComponent,
     DashboardComponent,
     ScheduleTableComponent,
     HomeworkTableComponent
