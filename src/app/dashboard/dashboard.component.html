@@ -1,6 +1,9 @@
 <div class="container">
     <div class="upper-container">
-        <div class="upper-container__content-block"></div>
+        <app-header [navigationTmpl]="navigationTmpl"></app-header>
+        <div class="upper-container__content-block">
+            <!-- put here content, related to upper part of the dashboard -->
+        </div>
     </div>
 
     <div class="bottom-container">
@@ -8,17 +11,24 @@
 
             <div class="scheduler-table__container">
                 <app-schedule-table></app-schedule-table>
-
             </div>
 
             <div class="scheduler-table__container">
-                <app-homework-table></app-homework-table>
-
-
+                <app-homework-table #homeworkTable></app-homework-table>
             </div>
-            <app-button class="add-button_right">+</app-button>
+
+            <app-button class="add-button_right" (click)="homeworkTable.addHomework()">+</app-button>
             <app-button class="add-button_left">+</app-button>
 
         </div>
     </div>
 </div>
+
+<ng-template #navigationTmpl>
+    <a href="#">
+        <mat-icon aria-hidden="false" class="mat-icon" aria-label="Example home icon">person</mat-icon>
+    </a>
+    <a href="">
+        <mat-icon aria-hidden="false" class="mat-icon" aria-label="Example home icon">exit_to_app</mat-icon>
+    </a>
+</ng-template>

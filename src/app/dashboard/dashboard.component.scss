@@ -76,12 +76,19 @@ $box-shadow: 0 0 10px rgba(0,
     position: absolute;
     bottom: 2rem;
     right: 2rem;
+    border-radius: 50%;
 }
 
 .add-button_left {
     position: absolute;
     bottom: 2rem;
     left: 2rem;
+    border-radius: 50%;
+}
+
+.mat-icon {
+    cursor: pointer;
+    color: rgba(229, 230, 247, 0.95);
 }
 
 @media (max-width: 760px) {

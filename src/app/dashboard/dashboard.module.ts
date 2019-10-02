@@ -14,9 +14,11 @@ import { HomeworkTableComponent } from './homework-table/homework-table.componen
 import { SharedModule } from '../shared/shared.module';
 import { ButtonComponent } from '../shared/widgets/button/button.component';
 import { DeadlinePipe } from '../shared/pipes/deadline-pipe.pipe';
+import { HeaderComponent } from '../header/header/header.component';
 
 @NgModule({
   declarations: [
+    HeaderComponent,
     DeadlinePipe,
     ButtonComponent,
     DashboardComponent,

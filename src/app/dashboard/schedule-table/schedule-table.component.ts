@@ -43,4 +43,14 @@ export class ScheduleTableComponent implements OnInit {
   constructor() {}
 
   ngOnInit() {}
+  addSchedule() {
+    console.log('here');
+    ELEMENT_DATA.push({
+      number: 10,
+      room: 677,
+      subject: 'New Subject',
+      start: `${new Date()}`,
+      end: `${new Date()}`
+    });
+  }
 }
