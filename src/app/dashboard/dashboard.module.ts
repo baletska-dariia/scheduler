@@ -12,10 +12,12 @@ import { DashboardComponent } from './dashboard.component';
 import { ScheduleTableComponent } from './schedule-table/schedule-table.component';
 import { HomeworkTableComponent } from './homework-table/homework-table.component';
 import { SharedModule } from '../shared/shared.module';
-import { ButtonComponent } from '../shared/button/button.component';
+import { ButtonComponent } from '../shared/widgets/button/button.component';
+import { DeadlinePipe } from '../shared/pipes/deadline-pipe.pipe';
 
 @NgModule({
   declarations: [
+    DeadlinePipe,
     ButtonComponent,
     DashboardComponent,
     ScheduleTableComponent,

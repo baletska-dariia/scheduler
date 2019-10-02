@@ -13,13 +13,13 @@ const ELEMENT_DATA: HomeworkElement[] = [
     number: 1,
     subject: 'Project Approach to Software Development',
     homework: 'Implement Angular Components',
-    deadline: `${new Date()}`
+    deadline: `${new Date(2019, 10, 5)}`
   },
   {
     number: 2,
     subject: 'OOP',
     homework: 'Study about Inheritance',
-    deadline: `${new Date()}`
+    deadline: `${new Date(2019, 11, 5)}`
   },
   {
     number: 3,
