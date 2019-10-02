@@ -9,19 +9,19 @@
 
         <!-- Room Column -->
         <ng-container matColumnDef="room">
-            <th mat-header-cell *matHeaderCellDef> Room</th>
+            <th mat-header-cell *matHeaderCellDef> {{displayedColumns[1] | uppercase}} </th>
             <td mat-cell *matCellDef="let element"> {{element.room}} </td>
         </ng-container>
 
         <!-- Subject Column -->
         <ng-container matColumnDef="subject">
-            <th mat-header-cell *matHeaderCellDef> Subject </th>
-            <td mat-cell *matCellDef="let element"> {{element.subject}} </td>
+            <th mat-header-cell *matHeaderCellDef> {{displayedColumns[2] | uppercase}} </th>
+            <td mat-cell *matCellDef="let element"> {{element.subject | titlecase}} </td>
         </ng-container>
 
         <!-- Start Column -->
         <ng-container matColumnDef="start">
-            <th mat-header-cell *matHeaderCellDef> Start <svg class="table-header-svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 60 60" style="enable-background:new 0 0 60 60;" xml:space="preserve">
+            <th mat-header-cell *matHeaderCellDef> {{displayedColumns[3] | uppercase}}<svg class="table-header-svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 60 60" style="enable-background:new 0 0 60 60;" xml:space="preserve">
 
 	<path d="M30,0C13.458,0,0,13.458,0,30s13.458,30,30,30s30-13.458,30-30S46.542,0,30,0z M30,58C14.561,58,2,45.439,2,30
 		S14.561,2,30,2s28,12.561,28,28S45.439,58,30,58z"/>
@@ -32,7 +32,7 @@
 
         <!-- End Column -->
         <ng-container matColumnDef="end">
-            <th mat-header-cell *matHeaderCellDef> End <svg class="table-header-svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 60 60" style="enable-background:new 0 0 60 60;" xml:space="preserve">
+            <th mat-header-cell *matHeaderCellDef> {{displayedColumns[4] | uppercase}} <svg class="table-header-svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 60 60" style="enable-background:new 0 0 60 60;" xml:space="preserve">
 
 	<path d="M30,0C13.458,0,0,13.458,0,30s13.458,30,30,30s30-13.458,30-30S46.542,0,30,0z M30,58C14.561,58,2,45.439,2,30
 		S14.561,2,30,2s28,12.561,28,28S45.439,58,30,58z"/>

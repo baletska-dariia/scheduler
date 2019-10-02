@@ -10,19 +10,19 @@
 
         <!-- Subject Column -->
         <ng-container matColumnDef="subject">
-            <th mat-header-cell *matHeaderCellDef> Subject </th>
-            <td mat-cell class="subject-row" *matCellDef="let element"> {{element.subject}} </td>
+            <th mat-header-cell *matHeaderCellDef> {{displayedColumns[1] | uppercase}} </th>
+            <td mat-cell class="subject-row" *matCellDef="let element"> {{element.subject | titlecase}} </td>
         </ng-container>
 
         <!-- Homework Column -->
         <ng-container matColumnDef="homework">
-            <th mat-header-cell *matHeaderCellDef> Homework </th>
-            <td mat-cell class="homework-row" *matCellDef="let element"> {{element.homework}} </td>
+            <th mat-header-cell *matHeaderCellDef> {{displayedColumns[2] | uppercase}} </th>
+            <td mat-cell class="homework-row" *matCellDef="let element"> {{element.homework | lowercase}} </td>
         </ng-container>
 
         <!-- Deadline Column -->
         <ng-container matColumnDef="deadline">
-            <th mat-header-cell *matHeaderCellDef> Deadline <svg class="table-header-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 60">
+            <th mat-header-cell *matHeaderCellDef> {{displayedColumns[3] | uppercase}} <svg class="table-header-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 60">
 	<path d="M30,0C13.458,0,0,13.458,0,30s13.458,30,30,30s30-13.458,30-30S46.542,0,30,0z M30,58C14.561,58,2,45.439,2,30
 		S14.561,2,30,2s28,12.561,28,28S45.439,58,30,58z"/>
 	<path d="M30,6c-0.552,0-1,0.447-1,1v23H14c-0.552,0-1,0.447-1,1s0.448,1,1,1h16c0.552,0,1-0.447,1-1V7C31,6.447,30.552,6,30,6z"/>
