@@ -1,11 +1,23 @@
 {
-    "login": {
-        "heydude": "Hey, dude!",
-        "welcome": "Welcome back! Please login to your account.",
+    "auth": {
         "username": "Username",
+        "username-required": "Username is required",
         "password": "Password",
-        "login": "Login",
+        "password-required": "Password is required",
+        "login_": "Login",
         "signup": "Sign up",
-        "login-to": "Login to schedule your studying process"
+        "login": {
+            "hello-text": "Hey, dude!",
+            "welcome": "Welcome back! Please login to your account.",
+            "login-text": "Login to schedule your studying process"
+        },
+        "registration": {
+            "hello-text": "Just schedule it!",
+            "welcome": "Please, fill the form to proceed.",
+            "full-name": "Full Name",
+            "full-name-required": "First Name is required",
+            "signup-text": "Register to schedule your studying process"
+        }
+        
     }
 }

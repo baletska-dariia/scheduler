@@ -4,21 +4,21 @@
             <div class="row h-100 align-items-center">
                 <div class="col-11">
                     <div class="welcomeTextsHolder">
-                        <p class="helloText">{{ 'login.heydude' | translate }}</p>
+                        <p class="helloText">{{ 'auth.login.hello-text' | translate }}</p>
                         <p class="welcomeBackText">
-                            {{ 'login.welcome' | translate }}
+                            {{ 'auth.login.welcome' | translate }}
                         </p>
                     </div>
                     <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
                         <input
                             type="text"
                             formControlName="username"
-                            placeholder="{{ 'login.username' | translate }}"
+                            placeholder="{{ 'auth.username' | translate }}"
                         />
                         <input
                             type="password"
                             formControlName="password"
-                            placeholder="{{ 'login.password' | translate }}"
+                            placeholder="{{ 'auth.password' | translate }}"
                         />
                         <div class="row justify-content-between"></div>
                         <div
@@ -30,7 +30,7 @@
                                     type="submit"
                                     class="loginButton"
                                 >
-                                    {{ 'login.login' | translate }}
+                                    {{ 'auth.login_' | translate }}
                                 </button>
                             </div>
                             <div class="col-6">
@@ -39,7 +39,7 @@
                                     class="signUpButton"
                                     (click)="onSignUpClick()"
                                 >
-                                {{ 'login.signup' | translate }}
+                                {{ 'auth.signup' | translate }}
                                 </button>
                             </div>
                         </div>
@@ -50,7 +50,7 @@
         <div class="col-8">
             <div class="row h-100 align-items-center">
                 <div class="col-12 taglineApp">
-                    <p>{{ 'login.login-to' | translate }}</p>
+                    <p>{{ 'auth.login.login-text' | translate }}</p>
                 </div>
             </div>
         </div>
