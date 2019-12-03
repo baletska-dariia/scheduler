@@ -1,0 +1,58 @@
+<div class="container-fluid h-100 loginBackground">
+    <div class="row h-100 loginBackgroundShadow">
+        <div class="col-4 loginCredentialsHolder">
+            <div class="row h-100 align-items-center">
+                <div class="col-11">
+                    <div class="welcomeTextsHolder">
+                        <p class="helloText">{{ 'login.heydude' | translate }}</p>
+                        <p class="welcomeBackText">
+                            {{ 'login.welcome' | translate }}
+                        </p>
+                    </div>
+                    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+                        <input
+                            type="text"
+                            formControlName="username"
+                            placeholder="{{ 'login.username' | translate }}"
+                        />
+                        <input
+                            type="password"
+                            formControlName="password"
+                            placeholder="{{ 'login.password' | translate }}"
+                        />
+                        <div class="row justify-content-between"></div>
+                        <div
+                            class="row justify-content-between buttonsContainer"
+                        >
+                            <div class="col-6">
+                                <button
+                                    [disabled]="loading"
+                                    type="submit"
+                                    class="loginButton"
+                                >
+                                    {{ 'login.login' | translate }}
+                                </button>
+                            </div>
+                            <div class="col-6">
+                                <button
+                                    routerLink="/registration"
+                                    class="signUpButton"
+                                    (click)="onSignUpClick()"
+                                >
+                                {{ 'login.signup' | translate }}
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="col-8">
+            <div class="row h-100 align-items-center">
+                <div class="col-12 taglineApp">
+                    <p>{{ 'login.login-to' | translate }}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

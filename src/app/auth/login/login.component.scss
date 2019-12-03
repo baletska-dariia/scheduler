@@ -1,0 +1,116 @@
+@import '~bootstrap/dist/css/bootstrap.min.css';
+
+html,
+body {
+  height: 100%;
+}
+
+p {
+  font-family: Roboto;
+  color: white;
+  font-size: 16px;
+}
+
+.loginBackground {
+  background: url(../../../assets/loginImg/Vector.jpg) no-repeat right center fixed;
+  background-size: cover;
+}
+
+.loginBackgroundShadow {
+  background-color: rgb(44, 58, 72, 0.55);
+}
+
+.loginCredentialsHolder {
+  background-color: #3B506B;
+
+  input {
+    // border: 1px solid white;
+    // border-radius: 3px;
+    margin: 10px 0;
+    border: 1px solid white;
+    border-radius: 3px;
+    padding: 9px 15px;
+    font-size: 0.8em;
+    width: 100%;
+    color: black;
+    outline: none;
+    line-height: 1.3;
+    background-color: rgb(81, 109, 145);
+    color: white;
+
+  }
+
+
+  input::placeholder {
+    border-radius: 3px;
+    font-family: Roboto;
+    font-size: 1em;
+    color: white;
+    background-color: rgb(81, 109, 145);
+  }
+
+
+}
+
+.taglineApp {
+  p {
+    font-size: 3.3em;
+    font-weight: bold;
+  }
+}
+
+.welcomeTextsHolder {
+  margin-bottom: 30px;
+
+  .helloText {
+    font-size: 2.5em;
+    font-weight: bold;
+  }
+
+  .welcomeBackText {
+    font-size: 0.8em;
+  }
+}
+
+.rememberChBoxLabel {
+  input {
+    width: auto;
+    margin-right: 4px;
+  }
+}
+
+.rememberChBoxLabel,
+.forgotPassword a {
+  text-decoration: none;
+  font-size: 0.6em;
+  color: white;
+}
+
+.forgotPassword p {
+  padding: 3px;
+  text-align: right;
+}
+
+.buttonsContainer {
+  button {
+    font-family: Roboto;
+    font-size: 0.8em;
+    width: 100%;
+    padding: 4px 4px;
+    border-radius: 3px;
+  }
+
+  .signUpButton {
+    background-color: #3B506B;
+    border-radius: 3px;
+    border: 1px solid white;
+    color: white;
+  }
+
+  .loginButton {
+    background-color: #FF7058;
+    border-radius: 3px;
+    border: none;
+    color: white;
+  }
+}

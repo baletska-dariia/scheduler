@@ -1,0 +1,101 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400&display=swap');
+$bg-color-dark: #3b506b;
+$bg-color-light: #f3f6f5;
+$upper-container-height: 15rem;
+$box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+@mixin flex-column-center() {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin flex-row-between() {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+@mixin flex-row-between-items-start() {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.dashboard-container {
+    width: 100%;
+    position: relative;
+    min-height: 100vh;
+}
+
+.upper-container {
+    width: 100%;
+    z-index: 1;
+    min-height: $upper-container-height;
+    background-color: $bg-color-dark;
+    @include flex-column-center();
+}
+
+.upper-container__content-block {
+    position: absolute;
+    z-index: 2;
+    top: 5rem;
+    background-color: #fff;
+    min-height: $upper-container-height;
+    width: 90%;
+    height: 15rem;
+    box-shadow: $box-shadow;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.bottom-container {
+    width: 100%;
+    background-color: $bg-color-light;
+    min-height: calc(100vh - $upper-container-height);
+    @include flex-column-center();
+}
+
+.bottom-container__content-block {
+    position: absolute;
+    @include flex-row-between-items-start();
+    flex-wrap: wrap;
+    width: 90%;
+    top: calc(100% - 23rem);
+    box-shadow: $box-shadow;
+    z-index: 2;
+    background-color: #fff;
+    min-height: calc(100vh - 25rem);
+}
+
+.scheduler-table__container {
+    position: relative;
+    width: 100%;
+}
+
+.add-button_right {
+    position: absolute;
+    bottom: 2rem;
+    right: 2rem;
+    border-radius: 50%;
+}
+
+.add-button_left {
+    position: absolute;
+    bottom: 2rem;
+    left: 2rem;
+    border-radius: 50%;
+}
+
+.mat-icon {
+    cursor: pointer;
+    color: rgba(229, 230, 247, 0.95);
+}
+
+@media (max-width: 760px) {
+    .scheduler-table__container {
+        width: 100%;
+        margin-bottom: 2rem;
+    }
+}

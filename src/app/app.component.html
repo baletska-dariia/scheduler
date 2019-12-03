@@ -1,0 +1,7 @@
+<router-outlet></router-outlet>
+<div *ngIf="loading; else loadingspinner"></div>
+<ng-template #loadingspinner>
+    <div id="spinner-wrapper">
+        <mat-spinner></mat-spinner>
+    </div>
+</ng-template>

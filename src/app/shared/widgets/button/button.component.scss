@@ -1,0 +1,15 @@
+.app-button {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+    background-color: #3b506b;
+    color: #fff;
+    font-size: 1.5rem;
+    overflow: hidden;
+    img {
+        width: 5px;
+        height: 5px;
+    }
+    svg {
+        color: white;
+    }
+}

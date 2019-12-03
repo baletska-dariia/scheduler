@@ -1,0 +1,37 @@
+<div class="dashboard-container">
+    <div class="upper-container">
+        <app-header [navigationTmpl]="navigationTmpl"></app-header>
+        <div class="upper-container__content-block">
+            <app-date-container></app-date-container>
+            <app-line-chart></app-line-chart>
+        </div>
+    </div>
+
+    <div class="bottom-container">
+        <div class="bottom-container__content-block">
+            <!-- <div class="scheduler-table__container">
+                <app-schedule-table></app-schedule-table>
+            </div> -->
+
+            <div class="scheduler-table__container">
+                <app-homework-table #homeworkTable></app-homework-table>
+            </div>
+
+            <app-button class="add-button_right" (click)="openDialog()"
+                ><span>+</span></app-button
+            >
+        </div>
+    </div>
+</div>
+
+<ng-template #navigationTmpl>
+    <a href="">
+        <mat-icon
+            aria-hidden="false"
+            class="mat-icon"
+            aria-label="Example home icon"
+            (click)="authenticationService.logout()"
+            >exit_to_app</mat-icon
+        >
+    </a>
+</ng-template>

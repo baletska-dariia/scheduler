@@ -1,0 +1,36 @@
+.date-container {
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    .date {
+        margin: 3rem;
+        width: 60%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        .header {
+            overflow: hidden;
+            margin-bottom: 0.5rem;
+            font-family: 'Signika', sans-serif;
+            color: #2c2d2d;
+        }
+        .header-notification {
+            font-size: 1vw;
+            margin-left: -0.2rem;
+            font-weight: 400;
+        }
+        .header-day {
+            font-size: 3vw;
+        }
+        .header-date {
+            font-size: 2vw;
+        }
+    }
+    .date-image {
+        display: block;
+        width: 40%;
+    }
+}

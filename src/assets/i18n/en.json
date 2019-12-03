@@ -1,0 +1,11 @@
+{
+    "login": {
+        "heydude": "Hey, dude!",
+        "welcome": "Welcome back! Please login to your account.",
+        "username": "Username",
+        "password": "Password",
+        "login": "Login",
+        "signup": "Sign up",
+        "login-to": "Login to schedule your studying process"
+    }
+}
