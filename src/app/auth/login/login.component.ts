@@ -17,6 +17,7 @@ import { TranslateService } from '@ngx-translate/core';
 export class LoginComponent implements OnInit {
     loginForm: FormGroup;
     loading = false;
+    langs = [ 'en', 'ru' ];
 
     constructor(
         private formBuilder: FormBuilder,
@@ -24,6 +25,7 @@ export class LoginComponent implements OnInit {
         private authenticationService: AuthenticationService,
         private userService: UserService,
         private alertService: AlertService,
+        private translateService: TranslateService
     ) {
         // redirect to home if already logged in
         if (this.authenticationService.currentUserValue) {
@@ -63,4 +65,10 @@ export class LoginComponent implements OnInit {
                 }
             );
     }
+
+    switchLanguage(lang: string) {
+        this.translateService.use(lang);
+        console.log(lang);
+        localStorage.setItem('lang', lang);
+      }
 }

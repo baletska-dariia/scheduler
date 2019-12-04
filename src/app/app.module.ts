@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -9,6 +10,7 @@ import { DemoMaterialModule } from './material.module';
 import { AuthModule } from './auth/auth.module';
 import { SharedModule } from './shared/shared.module';
 import { HttpClientModule } from '@angular/common/http';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
     declarations: [AppComponent],
@@ -20,9 +22,12 @@ import { HttpClientModule } from '@angular/common/http';
         DemoMaterialModule,
         AuthModule,
         HttpClientModule,
-        SharedModule
+        SharedModule,
+        NgbModule,
+        CommonModule
     ],
     providers: [],
     bootstrap: [AppComponent],
+    exports: [NgbModule]
 })
 export class AppModule {}

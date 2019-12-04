@@ -1,6 +1,16 @@
 <div class="container-fluid h-100 loginBackground">
     <div class="row h-100 loginBackgroundShadow">
         <div class="col-4 loginCredentialsHolder">
+            <mat-form-field>
+            <mat-label>{{ 'auth.language' | translate }}</mat-label>    
+                <mat-select [value]="currentLang" class="lang" #langSelect (change)="switchLanguage(langSelect.value)">
+                    <mat-option 
+                        *ngFor="let lang of langs" 
+                        [value]="lang">
+                        {{ lang }}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
             <div class="row h-100 align-items-center">
                 <div class="col-11">
                     <div class="welcomeTextsHolder">

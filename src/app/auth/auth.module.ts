@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HTTP_INTERCEPTORS, HttpClient } from '@angular/common/http';
+import { MatSelectModule } from '@angular/material/select';
 
 import { LoginComponent } from './login/login.component';
 import { RegistrationComponent } from './registration/registration.component';
@@ -20,7 +21,7 @@ export function createTranslateLoader(http: HttpClient) {
 }
 @NgModule({
     declarations: [LoginComponent, RegistrationComponent],
-    imports: [CommonModule, BrowserModule, FormsModule, ReactiveFormsModule,
+    imports: [CommonModule, BrowserModule, FormsModule, ReactiveFormsModule, MatSelectModule,
         TranslateModule.forRoot({
             loader: {
                 provide: TranslateLoader,

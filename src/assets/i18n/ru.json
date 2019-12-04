@@ -1,5 +1,6 @@
 {
     "auth": {
+        "language": "Язык",
         "username": "Имя пользователя",
         "username-required": "Имя пользователя обязательно",
         "password": "Пароль",
@@ -19,5 +20,15 @@
             "signup-text": "Зарегистрируйся для планирования своего учебного процесса"
         }
         
+    },
+    "shared": {
+        "modal": {
+            "add-homework": "Добавить Д/З",
+            "subject": "Предмет",
+            "homework": "Д/З",
+            "deadline": "Дедлайн",
+            "cancel-text": "Нет, спасибо",
+            "submit-text": "ОК"
+        }
     }
 }

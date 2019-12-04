@@ -1,8 +1,10 @@
 <div class="date-container">
     <div class="date">
         <h3 class="header header-notification">
-            <img src="../../../assets/bell.svg" alt="Bell notification" />Today
-            you have <span id="lectures-amount">3</span> lectures
+            <img src="../../../assets/bell.svg" alt="Bell notification" />
+            {{ 'dashboard.date-container.today-start' | translate }}
+            <span id="lectures-amount">3</span>
+            {{ 'dashboard.date-container.today-end' | translate }}
         </h3>
         <h1 class="header header-day">
             {{ currentDay }}

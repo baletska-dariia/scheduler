@@ -1,5 +1,6 @@
 {
     "auth": {
+        "language": "Language",
         "username": "Username",
         "username-required": "Username is required",
         "password": "Password",
@@ -18,6 +19,15 @@
             "full-name-required": "First Name is required",
             "signup-text": "Register to schedule your studying process"
         }
-        
+    },
+    "shared": {
+        "modal": {
+            "add-homework": "Add Homework",
+            "subject": "Subject",
+            "homework": "Homework",
+            "deadline": "Deadline",
+            "cancel-text": "No Thanks",
+            "submit-text": "Ok"
+        }
     }
 }
