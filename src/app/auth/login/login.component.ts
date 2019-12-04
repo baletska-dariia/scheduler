@@ -18,6 +18,7 @@ export class LoginComponent implements OnInit {
     loginForm: FormGroup;
     loading = false;
     langs = [ 'en', 'ru' ];
+    currentLang: string;
 
     constructor(
         private formBuilder: FormBuilder,
@@ -34,6 +35,7 @@ export class LoginComponent implements OnInit {
     }
 
     ngOnInit() {
+        this.currentLang = this.translateService.currentLang;
         this.loginForm = this.formBuilder.group({
             username: ['', Validators.required],
             password: ['', Validators.required],
@@ -68,7 +70,7 @@ export class LoginComponent implements OnInit {
 
     switchLanguage(lang: string) {
         this.translateService.use(lang);
-        console.log(lang);
+        this.currentLang = this.translateService.currentLang;
         localStorage.setItem('lang', lang);
       }
 }

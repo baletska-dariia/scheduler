@@ -11,15 +11,16 @@ export class AppComponent implements OnInit {
   loading = true;
 
   constructor(private translateService: TranslateService) {
-
+    this.translateService.langs = [ 'en', 'ru'];
+    this.translateService.setDefaultLang('en');
+    translateService.setDefaultLang('en');
+    translateService.use('en');
   }
 
   ngOnInit() {
-    this.translateService.langs = [ 'en', 'ru'];
-    this.translateService.setDefaultLang('en');
-    this.translateService.use(localStorage.getItem('lang'));
     this.showLoading();
   }
+
   showLoading() {
     this.loading = false;
     setTimeout(() => {

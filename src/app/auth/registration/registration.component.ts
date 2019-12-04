@@ -6,6 +6,8 @@ import { first } from 'rxjs/operators';
 import { AlertService } from '../../services/alert.service';
 import { UserService } from '../../services/user.service';
 import { AuthenticationService } from '../../services/authentication.service';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import { TranslateService } from '@ngx-translate/core';
 @Component({
   selector: 'app-registration',
   templateUrl: './registration.component.html',
@@ -15,13 +17,16 @@ export class RegistrationComponent implements OnInit {
   registerForm: FormGroup;
   loading = false;
   submitted = false;
+  langs = [ 'en', 'ru' ];
+  currentLang: string;
 
   constructor(
     private formBuilder: FormBuilder,
     private router: Router,
     private authenticationService: AuthenticationService,
     private userService: UserService,
-    private alertService: AlertService
+    private alertService: AlertService,
+    private translateService: TranslateService
   ) {
     // redirect to home if already logged in
     if (this.authenticationService.currentUserValue) {
@@ -30,6 +35,7 @@ export class RegistrationComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.currentLang = this.translateService.currentLang;
     this.registerForm = this.formBuilder.group({
       firstName: ['', Validators.required],
       username: ['', Validators.required],
@@ -63,5 +69,11 @@ export class RegistrationComponent implements OnInit {
           this.loading = false;
         }
       );
+  }
+
+  switchLanguage(lang: string) {
+    this.translateService.use(lang);
+    this.currentLang = this.translateService.currentLang;
+    localStorage.setItem('lang', lang);
   }
 }
