@@ -18,8 +18,7 @@
             "full-name": "Полное имя",
             "full-name-required": "Полное имя обязательно",
             "signup-text": "Зарегистрируйся для планирования своего учебного процесса"
-        }
-        
+        }   
     },
     "shared": {
         "modal": {
@@ -29,6 +28,14 @@
             "deadline": "Дедлайн",
             "cancel-text": "Нет, спасибо",
             "submit-text": "ОК"
+        }
+    },
+    "dashboard": {
+        "exit": "Выход",
+        "date-container": {
+            "today-start": "Сегодня тебя ждет ",
+            "today-end": " лекции",
+            "lectures": "Лекции"
         }
     }
 }

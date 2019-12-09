@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import * as moment from 'moment';
+import { TranslateService, LangChangeEvent } from '@ngx-translate/core';
 
 @Component({
     selector: 'app-date-container',
@@ -9,10 +10,12 @@ import * as moment from 'moment';
 export class DateContainerComponent implements OnInit {
     private currentDay: string;
     private currentDate: string;
-    constructor() {}
+    constructor(private translateService: TranslateService) {}
 
     ngOnInit() {
-        this.currentDay = moment().format('dddd');
-        this.currentDate = moment().format('MMM Do YY');
+        this.translateService.onLangChange.subscribe((lang: LangChangeEvent) => {
+            this.currentDay = moment().locale(lang.lang).format('dddd');
+            this.currentDate = moment().locale(lang.lang).format('MMM Do YY');
+        });
     }
 }

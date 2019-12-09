@@ -13,22 +13,11 @@ import {
     ErrorInterceptor,
     fakeBackendProvider,
 } from '../helpers';
-import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
-import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import { SharedModule } from '../shared/shared.module';
 
-export function createTranslateLoader(http: HttpClient) {
-    return new TranslateHttpLoader(http, './assets/i18n/', '.json');
-}
 @NgModule({
     declarations: [LoginComponent, RegistrationComponent],
-    imports: [CommonModule, BrowserModule, FormsModule, ReactiveFormsModule, MatSelectModule,
-        TranslateModule.forRoot({
-            loader: {
-                provide: TranslateLoader,
-                useFactory: (createTranslateLoader),
-                deps: [HttpClient]
-            }
-        })],
+    imports: [MatSelectModule, SharedModule],
     providers: [
         { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
         { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },
@@ -36,6 +25,6 @@ export function createTranslateLoader(http: HttpClient) {
         // provider used to create fake backend
         fakeBackendProvider,
     ],
-    exports: [LoginComponent, RegistrationComponent, TranslateModule],
+    // exports: [LoginComponent, RegistrationComponent],
 })
 export class AuthModule {}

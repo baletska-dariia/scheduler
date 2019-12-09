@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { TranslateService, LangChangeEvent } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-line-chart',
@@ -6,6 +7,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./line-chart.component.scss']
 })
 export class LineChartComponent implements OnInit {
+
+  constructor(private translateService: TranslateService) {
+
+  }
   public lineChartOptions = {
     scaleShowVerticalLines: false,
     responsive: true
@@ -16,15 +21,35 @@ export class LineChartComponent implements OnInit {
       backgroundColor: '#DCEBF4'
     }
   ];
-  public lineChartLabels = [
+  private lineChartLabelsEn = [
     'Monday',
     'Tuesday',
     'Wednesday',
     'Thursday',
     'Friday'
   ];
+  private lineChartLabelsRu = [
+    'Понедельник',
+    'Вторник',
+    'Среда',
+    'Четверг',
+    'Пятница'
+  ];
+  private labelEn = 'Lectures';
+  private labelRu = 'Лекции';
+
+  public lineCharLabels = null;
+
   public lineChartType = 'line';
   public lineChartLegend = true;
   public lineChartData = [{ data: [3, 2, 4, 5, 3], label: 'Lectures' }];
-  ngOnInit() {}
+
+  ngOnInit() {
+    this.translateService.onLangChange.subscribe((lang: LangChangeEvent) => {
+      switch (lang.lang) {
+        case 'en': this.lineCharLabels = this.lineChartLabelsEn; this.lineChartData[0].label = this.labelEn; break;
+        case 'ru': this.lineCharLabels = this.lineChartLabelsRu; this.lineChartData[0].label = this.labelRu; break;
+      }
+  });
+  }
 }

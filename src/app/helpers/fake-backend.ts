@@ -77,14 +77,7 @@ export class FakeBackendInterceptor implements HttpInterceptor {
             }
 
             user.id = users.length ? Math.max(...users.map(x => x.id)) + 1 : 1;
-            user.token = `eyJhbGciOiJIUzI1
-                NiIsInR5cCI6IkpXVCJ9.
-                eyJzdWIiOiIxMjM0NTY3ODkwIiw
-                ibmFtZSI6IkpvaG4gRG9
-                lIiwiaWF0IjoxNTE2MjM5MDIyfQ.
-                SflKxwRJSMeKKF2QT4fwpM
-                eJf36POk6yJV
-                _adQssw5c`;
+            user.token = `eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c`;
             user.homeworks = [];
             users.push(user);
             localStorage.setItem('currentUser', JSON.stringify(user));

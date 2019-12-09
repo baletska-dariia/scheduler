@@ -1,6 +1,7 @@
-import { Component, Inject, OnInit } from '@angular/core';
+import { Component, Inject } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { Homework } from '../../../models/homework.model';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
     selector: 'app-modal',
@@ -10,7 +11,7 @@ import { Homework } from '../../../models/homework.model';
 export class ModalComponent {
     constructor(
         public dialogRef: MatDialogRef<ModalComponent>,
-        @Inject(MAT_DIALOG_DATA) public data: Homework
+        @Inject(MAT_DIALOG_DATA) public data: Homework,
     ) {}
 
     onCancelClick(): void {

@@ -11,20 +11,18 @@ import { AuthModule } from './auth/auth.module';
 import { SharedModule } from './shared/shared.module';
 import { HttpClientModule } from '@angular/common/http';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { HeaderModule } from './header/header.module';
 
 @NgModule({
     declarations: [AppComponent],
     imports: [
         BrowserModule,
         AppRoutingModule,
-        BrowserAnimationsModule,
         DashboardModule,
-        DemoMaterialModule,
+        HeaderModule,
         AuthModule,
-        HttpClientModule,
         SharedModule,
-        NgbModule,
-        CommonModule
+        NgbModule
     ],
     providers: [],
     bootstrap: [AppComponent],

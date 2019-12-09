@@ -5,9 +5,9 @@ import { HeaderComponent } from './header/header.component';
 
 
 @NgModule({
-  declarations: [HeaderComponent],
+  declarations: [],
   imports: [
-    CommonModule
-  ]
+  ],
+  exports: []
 })
 export class HeaderModule { }

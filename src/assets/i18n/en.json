@@ -29,5 +29,13 @@
             "cancel-text": "No Thanks",
             "submit-text": "Ok"
         }
+    },
+    "dashboard": {
+        "exit": "Exit",
+        "date-container": {
+            "today-start": "Today you have ",
+            "today-end": " lectures",
+            "lectures": "Lectures"
+        }
     }
 }

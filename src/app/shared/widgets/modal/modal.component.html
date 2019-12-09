@@ -1,21 +1,21 @@
-<h1 mat-dialog-title>Add Homework</h1>
+<h1 mat-dialog-title></h1>
 <div mat-dialog-content>
-    <p>Subject</p>
+    <p>{{ 'shared.modal.add-homework' | translate }}</p>
     <mat-form-field>
         <input matInput [(ngModel)]="data.title" />
     </mat-form-field>
-    <p>Homework</p>
+    <p>{{ 'shared.modal.homework' | translate }}</p>
     <mat-form-field>
         <input matInput [(ngModel)]="data.homework" />
     </mat-form-field>
-    <p>Deadline</p>
+    <p>{{ 'shared.modal.deadline' | translate }}</p>
     <mat-form-field>
         <input matInput type="date" [(ngModel)]="data.deadline" />
     </mat-form-field>
 </div>
 <div mat-dialog-actions>
-    <button mat-button (click)="onCancelClick()">No, thank you</button>
+    <button mat-button (click)="onCancelClick()">{{ 'shared.modal.cancel-text' | translate }}</button>
     <button mat-button [mat-dialog-close]="data" cdkFocusInitial>
-            Ok
+        {{ 'shared.modal.submit-text' | translate }}
     </button>
 </div>

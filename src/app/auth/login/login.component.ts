@@ -72,5 +72,5 @@ export class LoginComponent implements OnInit {
         this.translateService.use(lang);
         this.currentLang = this.translateService.currentLang;
         localStorage.setItem('lang', lang);
-      }
+    }
 }
