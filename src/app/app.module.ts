@@ -12,22 +12,54 @@ import { SharedModule } from './shared/shared.module';
 import { HttpClientModule } from '@angular/common/http';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
+import { MatDialogModule } from '@angular/material';
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
+
+import {
+  DynamicComponentLoaderModule,
+  DynamicComponentManifest
+} from './dynamic-component-loader/dynamic-component-loader.module';
+import { DialogComponent } from './dynamic-modules/dialog/dialog.component';
+import { DialogModule } from './dynamic-modules/dialog/dialog.module';
+
+const manifests: DynamicComponentManifest[] = [
+  {
+    componentId: 'message',
+    path: 'dynamic-message', // some globally-unique identifier, used internally by the router
+    loadChildren: () => import('./dynamic-modules/message/message.module').then(m => m.MessageModule)
+  },
+  {
+    componentId: 'dialog',
+    path: 'dialog',
+    loadChildren: () => import('./dynamic-modules/dialog/dialog.module').then(m => m.DialogModule)
+  }
+];
+// This array defines which "componentId" maps to which lazy-loaded module.
+
 @NgModule({
-    declarations: [AppComponent],
-    imports: [
-        BrowserModule,
-        AppRoutingModule,
-        BrowserAnimationsModule,
-        DashboardModule,
-        DemoMaterialModule,
-        AuthModule,
-        HttpClientModule,
-        SharedModule,
-        NgbModule,
-        CommonModule
-    ],
-    providers: [],
-    bootstrap: [AppComponent],
-    exports: [NgbModule]
+  declarations: [AppComponent],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    DashboardModule,
+    DemoMaterialModule,
+    AuthModule,
+    HttpClientModule,
+    SharedModule,
+    NgbModule,
+    CommonModule,
+    BrowserModule,
+    DialogModule,
+
+    MatDialogModule,
+    NoopAnimationsModule,
+
+    DynamicComponentLoaderModule.forRoot(manifests)
+  ],
+  providers: [],
+  bootstrap: [AppComponent],
+  exports: [NgbModule],
 })
-export class AppModule {}
+export class AppModule {
+}
