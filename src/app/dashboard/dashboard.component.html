@@ -25,12 +25,14 @@
 </div>
 
 <ng-template #navigationTmpl>
-    <mat-form-field>
-        <mat-label>{{ current }}</mat-label>    
-        <mat-select [value]="currentLang" class="lang" #langSelect (selectionChange)="switchLanguage(langSelect.value);">
-            <mat-option 
-                *ngFor="let lang of langs"
-                [value]="lang">
+    <mat-form-field class="language-select">
+        <mat-label>{{ current }}</mat-label>
+        <mat-select
+            [value]="currentLang"
+            #langSelect
+            (selectionChange)="switchLanguage(langSelect.value)"
+        >
+            <mat-option *ngFor="let lang of langs" [value]="lang">
                 {{ lang }}
             </mat-option>
         </mat-select>

@@ -93,6 +93,10 @@ $box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     color: rgba(229, 230, 247, 0.95);
 }
 
+.language-select {
+    margin-right: 30px;
+}
+
 @media (max-width: 760px) {
     .scheduler-table__container {
         width: 100%;

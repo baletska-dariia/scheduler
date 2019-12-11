@@ -2,20 +2,11 @@
     <div class="row h-100 loginBackgroundShadow">
         <div class="col-4 loginCredentialsHolder">
             <div class="row h-100 align-items-center">
-                <mat-form-field>
-                        <mat-label>{{ current }}</mat-label>    
-                            <mat-select [value]="currentLang" class="lang" #langSelect (selectionChange)="switchLanguage(langSelect.value);">
-                                <mat-option 
-                                    *ngFor="let lang of langs"
-                                    [value]="lang">
-                                    {{ lang }}
-                                </mat-option>
-                            </mat-select>
-                        </mat-form-field>
                 <div class="col-11">
                     <div class="welcomeTextsHolder">
-
-                        <p class="helloText">{{ 'auth.login.hello-text' | translate }}</p>
+                        <p class="helloText">
+                            {{ 'auth.login.hello-text' | translate }}
+                        </p>
                         <p class="welcomeBackText">
                             {{ 'auth.login.welcome' | translate }}
                         </p>
@@ -50,13 +41,29 @@
                                     class="signUpButton"
                                     (click)="onSignUpClick()"
                                 >
-                                {{ 'auth.signup' | translate }}
+                                    {{ 'auth.signup' | translate }}
                                 </button>
                             </div>
                         </div>
                     </form>
+
+                    <mat-form-field class="language-select">
+                        <mat-label>{{ current }}</mat-label>
+                        <mat-select
+                            [value]="currentLang"
+                            class="lang"
+                            #langSelect
+                            (selectionChange)="switchLanguage(langSelect.value)"
+                        >
+                            <mat-option
+                                *ngFor="let lang of langs"
+                                [value]="lang"
+                            >
+                                {{ lang }}
+                            </mat-option>
+                        </mat-select>
+                    </mat-form-field>
                 </div>
-                
             </div>
         </div>
         <div class="col-8">
